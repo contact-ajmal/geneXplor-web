@@ -64,21 +64,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const gallery = document.getElementById('screenshotGallery');
     if (gallery) {
         const galleryData = [
-            { img: 'screenshots/homepage-hero.png', title: 'Smart Search', desc: 'Real-time autocomplete for genes, diseases, variants, and locations.' },
-            { img: 'screenshots/dashboard-overview.png', title: 'Gene Dashboard', desc: 'Summary view showing variant counts, diseases, publications, and interactions.' },
-            { img: 'screenshots/variants-tab.png', title: 'Variant Explorer', desc: 'Filterable, sortable variant table powered by TanStack Table.' },
-            { img: 'screenshots/variant-detail-modal.png', title: 'Detail Modal', desc: 'In-depth variant view with Details, Impact simulator, and Population frequencies.' },
-            { img: 'screenshots/variant-analytics.png', title: 'Visual Analytics', desc: 'Interactive charts for significance distribution and consequence types.' },
-            { img: 'screenshots/protein-3d.png', title: '3D Protein Structure', desc: 'AlphaFold protein viewer with confidence coloring and variant mapping.' },
-            { img: 'screenshots/population-map.png', title: 'Population Map', desc: 'World map showing allele frequencies across 9 global gnomAD populations.' },
-            { img: 'screenshots/interactions.png', title: 'Protein Interactions', desc: 'D3 force-directed graph of protein networks from STRING.' },
-            { img: 'screenshots/pathways.png', title: 'Biological Pathways', desc: 'Reactome pathway memberships organized by category.' },
-            { img: 'screenshots/timeline.png', title: 'Discovery Timeline', desc: 'Recharts timeline showing variant classifications over time.' },
-            { img: 'screenshots/publications.png', title: 'Research Publications', desc: 'Latest PubMed articles tracking publication trends.' },
-            { img: 'screenshots/disease.png', title: 'Disease Associations', desc: 'ClinVar-linked clinical conditions with variant counts.' },
-            { img: 'screenshots/reconciliation.png', title: 'Data Reconciliation', desc: 'Cross-references ClinVar classifications with gnomAD for conflict detection.' },
-            { img: 'screenshots/simulator.png', title: 'Impact Simulator', desc: 'Animated validation of the molecular cascade from DNA to Clinic.' },
-            { img: 'screenshots/report.png', title: 'Clinical Reports', desc: 'ACMG-formatted PDF/Markdown generation engine.' }
+            { img: 'screenshots/homepage-hero.png', title: 'Smart Search', desc: 'Find any human gene instantly using HGNC symbols, aliases, associated diseases (MIM), or Ensembl IDs without ambiguity.' },
+            { img: 'screenshots/dashboard-overview.png', title: 'Unified Dashboard', desc: 'Get a real-time summary of the gene\'s clinical relevance, including total pathogenic variants, linked phenotypes, and overall publication volume.' },
+            { img: 'screenshots/variants-tab.png', title: 'Variant Explorer', desc: 'Rapidly filter through thousands of documented variants by their clinical significance, functional consequence (e.g., frameshift, nonsense), and allele frequency.' },
+            { img: 'screenshots/variant-detail-modal.png', title: 'Variant Deep-Dive', desc: 'Inspect individual mutations to see precise molecular changes, global allele distributions, and supporting literature.' },
+            { img: 'screenshots/variant-analytics.png', title: 'Clinical Analytics', desc: 'Understand the overall pathogenicity landscape of a gene at a glance with interactive distribution charts and histograms.' },
+            { img: 'screenshots/protein-3d.png', title: 'AlphaFold Structural Integration', desc: 'Visualize exact missense mutations on a 3D protein structure to immediately determine if they disrupt active binding sites or occur in unstructured regions.' },
+            { img: 'screenshots/population-map.png', title: 'Genomic Epidemiology', desc: 'Evaluate allele frequencies mapped across distinct global ancestries using gnomAD data to ensure ancestrally aware interpretations.' },
+            { img: 'screenshots/interactions.png', title: 'Protein Interactome', desc: 'Investigate the gene\'s functional neighborhood through evidence-scored biological networks derived from STRING.' },
+            { img: 'screenshots/pathways.png', title: 'Biological Systems', desc: 'Contextualize the gene within broader hierarchical signaling cascades and metabolic pathways sourced from Reactome.' },
+            { img: 'screenshots/timeline.png', title: 'Discovery Timeline', desc: 'Track the historical classifications of variants over the last several decades to understand shifts in diagnostic consensus.' },
+            { img: 'screenshots/publications.png', title: 'Literature Tracking', desc: 'Cut through PubMed noise to access a live, targeted feed of the most critical studies relevant to your precise variant of interest.' },
+            { img: 'screenshots/disease.png', title: 'Disease Associations', desc: 'Review all clinical conditions linked to mutations in the gene, strictly mapped via ClinVar assertion data.' },
+            { img: 'screenshots/reconciliation.png', title: 'Conflict Detection Engine', desc: 'Automatically flag "Pathogenic" assertions from literature that contradict modern, high-frequency population observations.' },
+            { img: 'screenshots/simulator.png', title: 'Pathology Cascade Simulator', desc: 'Watch the entire Central Dogma play out—from base pair mutation, to protein misfolding, to presenting clinical phenotype.' },
+            { img: 'screenshots/report.png', title: 'Clinical Report Generation', desc: 'Seamlessly compile your findings into clean, ACMG-formatted summaries ready for inclusion in electronic health records or tumor boards.' }
         ];
 
         galleryData.forEach((item, i) => {
@@ -93,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p>${item.desc}</p>
                 </div>
             `;
-            // Alternate flex direction for visual interest
             if (i % 2 !== 0) {
                 div.style.direction = "rtl";
                 div.innerHTML = `

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GeneXplor — Gene Knowledge Platform</title>
-  <meta name="description" content="A comprehensive open-source platform for exploring human genes, variant analysis, and 3D protein structures.">
+  <title>GeneXplor — Gene Knowledge Platform for the Scientific Community</title>
+  <meta name="description" content="A comprehensive open-source platform for exploring human genes, clinical variant analysis, and AlphaFold structural integration.">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
@@ -20,11 +20,11 @@
         GeneXplor
       </a>
       <div class="nav-links" id="navLinks">
-        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html" class="nav-link active">Home</a>
         <a href="features.html" class="nav-link">Features</a>
+        <a href="use-cases.html" class="nav-link">Use Cases</a>
+        <a href="integrations.html" class="nav-link">Integrations</a>
         <a href="demo.html" class="nav-link">Demo</a>
-        <a href="architecture.html" class="nav-link">Architecture</a>
-        <a href="tech-stack.html" class="nav-link">Tech Stack</a>
         <a href="data-sources.html" class="nav-link">Data Sources</a>
       </div>
       <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
@@ -40,13 +40,13 @@
       <svg class="blob blob-2" viewBox="0 0 100 100" fill="#EAD0BA"><path d="M38,20c15,-9,35,-2,45,11c10,13,5,33,-7,45c-12,12,-31,16,-45,8c-14,-8,-21,-28,-16,-41c5,-13,18,-14,23,-23Z" /></svg>
 
       <div class="hero-inner">
-        <h1 class="hero-title">Build on biological knowledge</h1>
+        <h1 class="hero-title">Accelerate Your Genomic Discoveries</h1>
         <p class="hero-subtitle">
-          An open-source, high-performance platform for visualizing and analyzing human genomic data. Connect Ensembl, ClinVar, gnomAD, and AlphaFold effortlessly.
+          The ultimate platform for clinical geneticists and structural biologists. Unify patient variants, population allele frequencies, and AlphaFold 3D protein structures into one intuitive workspace.
         </p>
         <div class="hero-cta-row">
-          <a href="#get-started" class="btn btn-primary">Start building</a>
-          <a href="demo.html" class="btn btn-outline">View Demo</a>
+          <a href="https://genexplor.app" class="btn btn-primary" target="_blank">Explore Human Genes</a>
+          <a href="use-cases.html" class="btn btn-outline">See Workflows</a>
         </div>
         
         <!-- Minimal Demo Browser -->
@@ -68,39 +68,33 @@
     <!-- Stats Section -->
     <section class="stats-strip">
       <div class="stats-inner">
-        <div class="stat-item"><span class="stat-number">8+</span><div class="stat-label">Genomic APIs</div></div>
-        <div class="stat-item"><span class="stat-number">12</span><div class="stat-label">Analysis Views</div></div>
-        <div class="stat-item"><span class="stat-number">5M+</span><div class="stat-label">Variants Tracked</div></div>
-        <div class="stat-item"><span class="stat-number">20</span><div class="stat-label">Async Services</div></div>
+        <div class="stat-item"><span class="stat-number">8+</span><div class="stat-label">Biological Databases</div></div>
+        <div class="stat-item"><span class="stat-number">12</span><div class="stat-label">Analysis Dimensions</div></div>
+        <div class="stat-item"><span class="stat-number">5M+</span><div class="stat-label">Variants Mapped</div></div>
+        <div class="stat-item"><span class="stat-number">1</span><div class="stat-label">Unified Platform</div></div>
       </div>
     </section>
 
-    <!-- Get Started -->
-    <section id="get-started" class="section">
+    <!-- Impact on Scientific Community (Replaces Get Started / Docker) -->
+    <section id="impact" class="section">
       <div class="section-inner">
-        <div class="section-header">
-          <h2>Get Started Today</h2>
-          <p>GeneXplor is open-source and easy to deploy using Docker Compose. Have the full platform running locally in under 3 minutes.</p>
+        <div class="section-header" style="text-align: center; max-width: 800px; margin: 0 auto 50px;">
+          <h2>Solving the Data Silo Problem</h2>
+          <p>The biggest hurdle in modern genomic research isn't a lack of data; it's the fragmentation of that data across dozens of isolated databases. GeneXplor was built specifically for the scientific community to bridge these gaps.</p>
         </div>
         
-        <div class="setup-container">
-          <div class="setup-step">
-            <h3>1. Clone the repository</h3>
-            <div class="code-block">
-              <span class="code-cmd">git</span> clone https://github.com/contact-ajmal/geneXplor.git<br>
-              <span class="code-cmd">cd</span> geneXplor
-            </div>
+        <div class="grid-2">
+          <div class="feature-card">
+            <h3>Unified Context, Less Tab-Switching</h3>
+            <p>Instead of cross-referencing patient variants in ClinVar, checking allele frequencies in gnomAD, reviewing structural impacts in AlphaFold, and reading literature on PubMed—we bring them all to a single dashboard.</p>
+            <hr style="border: 0; border-top: 1px solid var(--border-light); margin: 16px 0;">
+            <a href="integrations.html" style="font-weight:500; font-size: 0.95rem; color:var(--accent-primary);">See how we integrate databases &rarr;</a>
           </div>
-          <div class="setup-step">
-            <h3>2. Start the services</h3>
-            <div class="code-block">
-              <span class="code-comment"># Starts FastAPI backend and React frontend</span><br>
-              <span class="code-cmd">docker-compose</span> up -d --build
-            </div>
-          </div>
-          <div class="setup-step">
-            <h3>3. Access the platform</h3>
-            <p style="color:var(--text-secondary);margin-top:12px;">The frontend is immediately accessible at <code>http://localhost:5173</code> and the API root at <code>http://localhost:8000/docs</code>.</p>
+          <div class="feature-card">
+            <h3>Open Science Accessible to All</h3>
+            <p>GeneXplor is entirely open-source. Bioinformaticians can audit the codebase, while bench researchers and clinicians can use the intuitive visual interfaces to classify variants of uncertain significance (VUS) faster and with greater confidence.</p>
+            <hr style="border: 0; border-top: 1px solid var(--border-light); margin: 16px 0;">
+            <a href="use-cases.html" style="font-weight:500; font-size: 0.95rem; color:var(--accent-primary);">Read about Clinical Workflows &rarr;</a>
           </div>
         </div>
       </div>
@@ -122,26 +116,25 @@
       <div class="footer-col">
         <h4>Platform</h4>
         <a href="features.html">Features</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="integrations.html">Integrations</a>
         <a href="demo.html">Demo</a>
-        <a href="architecture.html">Architecture</a>
-        <a href="tech-stack.html">Tech Stack</a>
       </div>
       <div class="footer-col">
         <h4>Data Providers</h4>
         <a href="https://useast.ensembl.org/" target="_blank">Ensembl</a>
         <a href="https://www.ncbi.nlm.nih.gov/clinvar/" target="_blank">ClinVar</a>
         <a href="https://gnomad.broadinstitute.org/" target="_blank">gnomAD</a>
-        <a href="https://www.uniprot.org/" target="_blank">UniProt</a>
+        <a href="https://alphafold.ebi.ac.uk/" target="_blank">AlphaFold</a>
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
         <a href="https://github.com/contact-ajmal/geneXplor" target="_blank">GitHub Repository</a>
         <a href="https://genexplor.app" target="_blank">Live Application</a>
-        <a href="#get-started">Documentation</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 GeneXplor Project. Open source under MIT License.</p>
+      <p>&copy; 2026 GeneXplor Project. Open source reading layer for the scientific community.</p>
     </div>
   </footer>
 

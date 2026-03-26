@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeneXplor — Scientific Integrations</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg fill="none" class="logo-icon" viewBox="0 0 32 32">
+          <circle cx="16" cy="16" r="14" stroke="#D97757" stroke-width="2.5"/>
+          <path d="M10 20c2-6 4-12 6-12s4 6 6 12" stroke="#D97757" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        GeneXplor
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="use-cases.html" class="nav-link">Use Cases</a>
+        <a href="integrations.html" class="nav-link active">Integrations</a>
+        <a href="demo.html" class="nav-link">Demo</a>
+        <a href="data-sources.html" class="nav-link">Data Sources</a>
+      </div>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <h1 class="page-title">Deep Scientific Integrations</h1>
+      <p class="page-subtitle">GeneXplor does more than link to external databases. It structurally integrates their data to generate novel insights.</p>
+    </div>
+
+    <section class="section">
+      <div class="section-inner">
+        <!-- AlphaFold -->
+        <div class="arch-layer">
+          <div class="arch-layer-header">
+            <h3 style="color:var(--accent-primary);">DeepMind AlphaFold Integration</h3>
+            <p>Bringing predictive structural biology directly into your genomic workflow.</p>
+          </div>
+          <div class="arch-sub-grid">
+            <div class="arch-sub-card">
+              <strong>Interactive 3D Views</strong>
+              <p>Explore high-accuracy predicted structures of human proteins natively within the dashboard. Toggle between cartoon, surface, and ball-and-stick representations.</p>
+            </div>
+            <div class="arch-sub-card">
+              <strong>pLDDT Confidence Heatmapping</strong>
+              <p>Visually distinguish between highly confident folded domains and unstructured, intrinsically disordered regions vital for protein signaling.</p>
+            </div>
+            <div class="arch-sub-card">
+              <strong>Residue Mapping</strong>
+              <p>When you select a missense variant in the Variant Explorer, GeneXplor instantly highlights that exact amino acid change on the 3D AlphaFold structure, revealing whether it alters an active site or a buried core.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ClinVar + gnomAD -->
+        <div class="arch-layer">
+          <div class="arch-layer-header">
+            <h3>ClinVar x gnomAD Reconciliation</h3>
+            <p>The synergy of clinical assertions and massive population datasets.</p>
+          </div>
+          <div class="arch-sub-grid">
+            <div class="arch-sub-card">
+              <strong>Evidence Synthesis</strong>
+              <p>We download assertion criteria from ClinVar and juxtapose it directly against exome sequencing data from the Genome Aggregation Database (gnomAD).</p>
+            </div>
+            <div class="arch-sub-card">
+              <strong>Conflict Flags</strong>
+              <p>If a variant is labeled "Pathogenic" for an autosomal dominant disease in ClinVar but appears in 5% of healthy individuals in gnomAD, it's immediately red-flagged for researcher review.</p>
+            </div>
+            <div class="arch-sub-card">
+              <strong>Global Ancestry Context</strong>
+              <p>Pathogenicity can vary by ancestral background. We visualize allele frequencies across 9 distinct geographic populations to ensure your interpretations are ancestrally aware.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ensembl + UniProt -->
+        <div class="arch-layer">
+          <div class="arch-layer-header">
+            <h3>Core Reference: Ensembl & UniProt</h3>
+            <p>The foundation of accurate gene modeling and proteomics.</p>
+          </div>
+          <div class="arch-sub-grid">
+            <div class="arch-sub-card">
+              <strong>Canonical Transcripts</strong>
+              <p>We rely on Ensembl's rigorous genomic coordinates to ensure every variant is mapped to the universally accepted canonical transcript, avoiding HGVSc drift.</p>
+            </div>
+            <div class="arch-sub-card">
+              <strong>Protein Domains</strong>
+              <p>By integrating UniProt, we break down proteins into their functional domains (e.g., Kinase, PH domain), enabling researchers to categorize variants by the specific molecular function they disrupt.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- We will reuse the same footer as use-cases.html, keeping it consistent -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <svg fill="none" class="logo-icon" viewBox="0 0 32 32" style="margin-right:8px;">
+            <circle cx="16" cy="16" r="14" stroke="#D97757" stroke-width="2.5"/>
+            <path d="M10 20c2-6 4-12 6-12s4 6 6 12" stroke="#D97757" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          GeneXplor
+        </a>
+        <p class="footer-desc" style="margin-top:16px;">An advanced platform for mapping human genes to clinical context, making genomic data intuitive and accessible.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="features.html">Features</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="integrations.html">Integrations</a>
+        <a href="demo.html">Demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Data Providers</h4>
+        <a href="https://useast.ensembl.org/" target="_blank">Ensembl</a>
+        <a href="https://www.ncbi.nlm.nih.gov/clinvar/" target="_blank">ClinVar</a>
+        <a href="https://gnomad.broadinstitute.org/" target="_blank">gnomAD</a>
+        <a href="https://alphafold.ebi.ac.uk/" target="_blank">AlphaFold</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://github.com/contact-ajmal/geneXplor" target="_blank">GitHub Repository</a>
+        <a href="https://genexplor.app" target="_blank">Live Application</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 GeneXplor Project. Open source reading layer for the scientific community.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

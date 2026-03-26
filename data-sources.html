@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GeneXplor — Data Sources</title>
+  <title>GeneXplor — Biological Databases</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
@@ -20,18 +20,21 @@
       <div class="nav-links" id="navLinks">
         <a href="index.html" class="nav-link">Home</a>
         <a href="features.html" class="nav-link">Features</a>
+        <a href="use-cases.html" class="nav-link">Use Cases</a>
+        <a href="integrations.html" class="nav-link">Integrations</a>
         <a href="demo.html" class="nav-link">Demo</a>
-        <a href="architecture.html" class="nav-link">Architecture</a>
-        <a href="tech-stack.html" class="nav-link">Tech Stack</a>
         <a href="data-sources.html" class="nav-link active">Data Sources</a>
       </div>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <main>
     <div class="page-header">
       <h1 class="page-title">8 Biological Databases</h1>
-      <p class="page-subtitle">GeneXplor aggregates and standardizes data from the world's most trusted genomic and biomedical databases into a single, unified interface.</p>
+      <p class="page-subtitle">GeneXplor aggregates and standardizes data from the world's most trusted genomic and biomedical consortia into a single, unified interface.</p>
     </div>
 
     <section class="section">
@@ -40,60 +43,51 @@
           <table>
             <thead>
               <tr>
-                <th>Source</th>
-                <th>Data Retrieved</th>
-                <th>Integration Approach</th>
-                <th>Endpoint Focus</th>
+                <th>Consortium / Database</th>
+                <th>Biological Focus</th>
+                <th>Key Insights Provided</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><strong>Ensembl</strong></td>
-                <td>Gene coordinates, transcripts, biotype classification, chromosomal location, strand information.</td>
-                <td>REST API parsing</td>
-                <td><span class="ds-badge">rest.ensembl.org</span></td>
+                <td>Genomic Coordinates & Transcripts</td>
+                <td>Establishes the foundation of the gene model, defining exact chromosomal locations, canonical transcripts, biotypes (e.g., protein-coding vs lncRNA), and exon boundaries.</td>
               </tr>
               <tr>
                 <td><strong>UniProt</strong></td>
-                <td>Protein info, functional domains, functional descriptions, protein length, gene name aliases.</td>
-                <td>Primary Knowledge Base</td>
-                <td><span class="ds-badge">rest.uniprot.org</span></td>
+                <td>Functional Proteomics</td>
+                <td>Reveals what the resulting protein actually *does*. Provides functional descriptions, domain maps (like Zinc fingers or Kinase domains), subcellular location, and sequence length.</td>
               </tr>
               <tr>
                 <td><strong>ClinVar (NCBI)</strong></td>
-                <td>Clinical variants, pathogenic classifications, disease associations, submission timeline.</td>
-                <td>NCBI E-utilities XML parsing</td>
-                <td><span class="ds-badge">eutils.ncbi.nlm.nih.gov</span></td>
+                <td>Genomic Epidemiology & Phenotypes</td>
+                <td>The clinical backbone. Links specific DNA changes to observed human diseases and tracks the historical timeline of variant classifications (Pathogenic, VUS, Benign).</td>
               </tr>
               <tr>
                 <td><strong>gnomAD</strong></td>
-                <td>Population allele frequencies (AF), variant consequences, HGVS notation, allele counts.</td>
-                <td>Aggregated local cache / API</td>
-                <td><span class="ds-badge">gnomad.broadinstitute.org</span></td>
+                <td>Population Genetics</td>
+                <td>Provides the allele frequency denominator. Essential for determining if a variant is genuinely rare, or just common in an under-sampled ancestral population (e.g., African/American).</td>
               </tr>
               <tr>
                 <td><strong>PubMed (NCBI)</strong></td>
-                <td>Research article abstracts, publication dates, journal names, PMC IDs, citation trend timelines.</td>
-                <td>NCBI E-utilities & Summary</td>
-                <td><span class="ds-badge">eutils.ncbi.nlm.nih.gov</span></td>
+                <td>Biomedical Literature</td>
+                <td>Tracks the cadence of scientific discovery. Provides abstracts, publication dates, and citation trends to help researchers find the seminal papers documenting a gene's relevance.</td>
               </tr>
               <tr>
                 <td><strong>AlphaFold DB</strong></td>
-                <td>3D structural models of proteins, per-residue confidence scores (pLDDT).</td>
-                <td>PDBe Molstar WebGL Integration</td>
-                <td><span class="ds-badge">alphafold.ebi.ac.uk</span></td>
+                <td>Structural Biology</td>
+                <td>Transforms 1D sequences into 3D conformational models. Crucial for visualizing whether a mutation is buried in the hydrophobic core or exposed on an interacting surface.</td>
               </tr>
               <tr>
                 <td><strong>STRING</strong></td>
-                <td>Protein-protein interaction evidence scores, experimental validations, co-expression scores.</td>
-                <td>REST API JSON queries</td>
-                <td><span class="ds-badge">string-db.org/api</span></td>
+                <td>Protein Networks</td>
+                <td>Maps out the gene's functional "neighborhood". Provides evidence-scored webs of interacting proteins, helping identify unknown pathways and multi-protein complexes.</td>
               </tr>
               <tr>
                 <td><strong>Reactome</strong></td>
-                <td>Categorized biochemical pathways, molecular interactions, signal transduction hierarchies.</td>
-                <td>Content Service API</td>
-                <td><span class="ds-badge">reactome.org/ContentService</span></td>
+                <td>Systems Biology</td>
+                <td>Embeds the gene into the broader machinery of the cell. Categorizes hierarchical biochemical pathways (like Signal Transduction or Apoptosis) that the gene participates in.</td>
               </tr>
             </tbody>
           </table>
@@ -103,8 +97,39 @@
   </main>
 
   <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <svg fill="none" class="logo-icon" viewBox="0 0 32 32" style="margin-right:8px;">
+            <circle cx="16" cy="16" r="14" stroke="#D97757" stroke-width="2.5"/>
+            <path d="M10 20c2-6 4-12 6-12s4 6 6 12" stroke="#D97757" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          GeneXplor
+        </a>
+        <p class="footer-desc" style="margin-top:16px;">An advanced platform for mapping human genes to clinical context, making genomic data intuitive and accessible.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="features.html">Features</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="integrations.html">Integrations</a>
+        <a href="demo.html">Demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Data Providers</h4>
+        <a href="https://useast.ensembl.org/" target="_blank">Ensembl</a>
+        <a href="https://www.ncbi.nlm.nih.gov/clinvar/" target="_blank">ClinVar</a>
+        <a href="https://gnomad.broadinstitute.org/" target="_blank">gnomAD</a>
+        <a href="https://alphafold.ebi.ac.uk/" target="_blank">AlphaFold</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://github.com/contact-ajmal/geneXplor" target="_blank">GitHub Repository</a>
+        <a href="https://genexplor.app" target="_blank">Live Application</a>
+      </div>
+    </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 GeneXplor Project. Open source under MIT License.</p>
+      <p>&copy; 2026 GeneXplor Project. Open source reading layer for the scientific community.</p>
     </div>
   </footer>
   <script src="script.js"></script>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GeneXplor — Features</title>
+  <title>GeneXplor — Scientific Capabilities</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
@@ -22,9 +22,9 @@
       <div class="nav-links" id="navLinks">
         <a href="index.html" class="nav-link">Home</a>
         <a href="features.html" class="nav-link active">Features</a>
+        <a href="use-cases.html" class="nav-link">Use Cases</a>
+        <a href="integrations.html" class="nav-link">Integrations</a>
         <a href="demo.html" class="nav-link">Demo</a>
-        <a href="architecture.html" class="nav-link">Architecture</a>
-        <a href="tech-stack.html" class="nav-link">Tech Stack</a>
         <a href="data-sources.html" class="nav-link">Data Sources</a>
       </div>
     </div>
@@ -32,8 +32,8 @@
 
   <main>
     <div class="page-header">
-      <h1 class="page-title">Core Features</h1>
-      <p class="page-subtitle">A comprehensive suite of tools for deep genomic analysis.</p>
+      <h1 class="page-title">Platform Capabilities</h1>
+      <p class="page-subtitle">A comprehensive suite of tools designed specifically for geneticists to support deep biological analysis and confident variant interpretation.</p>
     </div>
 
     <section class="section">
@@ -44,15 +44,15 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
           </div>
           <h3>Smart Gene Search</h3>
-          <p>Real-time autocomplete powered by Meilisearch. Search instantly across gene symbols, aliases, Ensembl IDs, associated diseases, variants, and chromosomal locations with Cmd/Ctrl+K support.</p>
+          <p>Instantly fetch any human gene using HGNC symbols, aliases, associated diseases (MIM), or Ensembl IDs. Eliminates the friction of ambiguous gene synonyms when searching literature.</p>
         </div>
         <!-- Feature 2 -->
         <div class="feature-card">
           <div class="feature-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
           </div>
-          <h3>Gene Dashboard</h3>
-          <p>A unified 12-tab analysis dashboard aggregating data from 8 distinct databases in real-time. Navigate seamlessly between variants, proteins, pathways, and publications.</p>
+          <h3>Centralized Dashboard</h3>
+          <p>A unified viewing pane that prevents "tab sprawl." Analyze genomic coordinates, functional protein domains, clinical assertions, and literature without leaving a single screen.</p>
         </div>
         <!-- Feature 3 -->
         <div class="feature-card">
@@ -60,23 +60,23 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
           </div>
           <h3>Variant Explorer</h3>
-          <p>Advanced data table capable of filtering, sorting, and analyzing thousands of variants. Filter by clinical significance, consequence, and allele frequency with immediate visual feedback.</p>
+          <p>Sort through thousands of variants quickly. Filter by pathogenic classifications, molecular consequence (e.g., nonsense, frameshift, missense), and allele frequency to isolate causative mutations.</p>
         </div>
         <!-- Feature 4 -->
         <div class="feature-card">
           <div class="feature-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
           </div>
-          <h3>3D Protein Structure</h3>
-          <p>Interactive AlphaFold integration using PDBe Molstar. Visualize protein models with pLDDT confidence coloring, map variants directly onto residues, and toggle display modes.</p>
+          <h3>3D Protein Structures</h3>
+          <p>Visually assess whether a missense variant disrupts a crucial binding site or merely occurs in an unstructured loop, using integrated AlphaFold protein models colored by structural confidence.</p>
         </div>
         <!-- Feature 5 -->
         <div class="feature-card">
           <div class="feature-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10zM2 12h20"/></svg>
           </div>
-          <h3>Population Genetics</h3>
-          <p>Global map visualizations of variant allele frequencies. Break down occurrence rates across 9 distinct geographic populations relying on gnomAD exome and genome datasets.</p>
+          <h3>Genomic Epidemiology</h3>
+          <p>Break down variant occurrence rates across distinct ancestral and geographic populations to ensure your clinical interpretations are historically and culturally aware.</p>
         </div>
         <!-- Feature 6 -->
         <div class="feature-card">
@@ -84,7 +84,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <h3>Reconciliation Engine</h3>
-          <p>Cross-references assertions from ClinVar with population data from gnomAD to flag conflicts — automatically detecting variants classified as Pathogenic but common in healthy populations.</p>
+          <p>An automated diagnostic protocol that cross-references clinical assertions against population prevalence — helping to deprecate historical classifications that don't match modern cohort data.</p>
         </div>
         <!-- Feature 7 -->
         <div class="feature-card">
@@ -92,15 +92,15 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4L12 14.01l-3-3"/></svg>
           </div>
           <h3>Clinical Reports</h3>
-          <p>Automated generation of ACMG-formatted clinical summaries. Select specific variants and findings, and export highly-structured Markdown, PDF, or JSON reports.</p>
+          <p>Select multiple variants and findings to instantly generate an ACMG-formatted clinical summary. Export structured PDFs or Markdowns directly for inclusion in electronic health records.</p>
         </div>
         <!-- Feature 8 -->
         <div class="feature-card">
           <div class="feature-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
-          <h3>Impact Simulator</h3>
-          <p>An animated visual cascade showing the complete Central Dogma translation pipeline (DNA → RNA → Protein → Structure → Function) for any selected genomic variant.</p>
+          <h3>Biological Pathways</h3>
+          <p>Map your gene to its corresponding intracellular signaling cascades and metabolic networks. Understand upstream regulators and downstream effectors seamlessly.</p>
         </div>
         <!-- Feature 9 -->
         <div class="feature-card">
@@ -108,15 +108,46 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16h16V8l-6-6zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
           </div>
           <h3>Research Publications</h3>
-          <p>Live feed of PubMed biomedical literature targeting the specific gene. Includes a Research Pulse timeline tracking relative publication momentum over decades.</p>
+          <p>Track historical publication momentum and isolate the most impactful papers concerning a specific gene or its associated clinical phenotypes without parsing through massive PubMed queries.</p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer" style="margin-top:0; border-top:none;">
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <svg fill="none" class="logo-icon" viewBox="0 0 32 32" style="margin-right:8px;">
+            <circle cx="16" cy="16" r="14" stroke="#D97757" stroke-width="2.5"/>
+            <path d="M10 20c2-6 4-12 6-12s4 6 6 12" stroke="#D97757" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          GeneXplor
+        </a>
+        <p class="footer-desc" style="margin-top:16px;">An advanced platform for mapping human genes to clinical context, making genomic data intuitive and accessible.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="features.html">Features</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="integrations.html">Integrations</a>
+        <a href="demo.html">Demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Data Providers</h4>
+        <a href="https://useast.ensembl.org/" target="_blank">Ensembl</a>
+        <a href="https://www.ncbi.nlm.nih.gov/clinvar/" target="_blank">ClinVar</a>
+        <a href="https://gnomad.broadinstitute.org/" target="_blank">gnomAD</a>
+        <a href="https://alphafold.ebi.ac.uk/" target="_blank">AlphaFold</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://github.com/contact-ajmal/geneXplor" target="_blank">GitHub Repository</a>
+        <a href="https://genexplor.app" target="_blank">Live Application</a>
+      </div>
+    </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 GeneXplor Project. Open source under MIT License.</p>
+      <p>&copy; 2026 GeneXplor Project. Open source reading layer for the scientific community.</p>
     </div>
   </footer>
 
