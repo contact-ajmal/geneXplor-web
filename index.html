@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GeneXplor — Gene Knowledge Platform</title>
+  <meta name="description" content="Search any human gene and get a comprehensive dashboard aggregating data from 8 major genomic databases. Ensembl, ClinVar, gnomAD, UniProt, PubMed, AlphaFold, STRING, and Reactome." />
+  <meta name="author" content="GeneXplor" />
+  <meta property="og:title" content="GeneXplor — Gene Knowledge Platform" />
+  <meta property="og:description" content="Search any human gene and get a comprehensive dashboard aggregating data from 8 genomic databases with interactive visualizations and clinical reports." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ═══════ NAVBAR ═══════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <svg class="logo-icon" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="url(#logoGrad)" stroke-width="2.5"/><path d="M10 20c2-6 4-12 6-12s4 6 6 12" stroke="url(#logoGrad)" stroke-width="2" stroke-linecap="round"/><path d="M10 16h12" stroke="url(#logoGrad)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/><defs><linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#56B4D3"/><stop offset="1" stop-color="#7C6EE7"/></linearGradient></defs></svg>
+        <span>GeneXplor</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#screenshots" class="nav-link">Screenshots</a>
+        <a href="#architecture" class="nav-link">Architecture</a>
+        <a href="#tech-stack" class="nav-link">Tech Stack</a>
+        <a href="#data-sources" class="nav-link">Data Sources</a>
+        <a href="#get-started" class="nav-link">Get Started</a>
+      </div>
+      <a href="https://github.com/contact-ajmal/geneXplor" target="_blank" class="nav-github-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════ HERO ═══════ -->
+  <section id="home" class="hero-section">
+    <div class="hero-bg-effects">
+      <div class="hero-glow hero-glow-1"></div>
+      <div class="hero-glow hero-glow-2"></div>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          OPEN SOURCE &bull; v0.2.0
+        </div>
+        <h1 class="hero-title">
+          <span class="gradient-text">Gene Knowledge</span>
+          <br/>Platform
+        </h1>
+        <p class="hero-subtitle">
+          Search any human gene and get a comprehensive dashboard aggregating data from
+          <strong>Ensembl</strong>, <strong>ClinVar</strong>, <strong>gnomAD</strong>, <strong>UniProt</strong>,
+          <strong>PubMed</strong>, <strong>AlphaFold</strong>, <strong>STRING</strong>, and <strong>Reactome</strong>
+          — all in one place.
+        </p>
+        <div class="hero-cta-row">
+          <a href="https://github.com/contact-ajmal/geneXplor" target="_blank" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            View on GitHub
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+          <a href="#features" class="btn btn-outline">
+            Explore Features
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="hero-tags">
+          <span class="hero-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg> Smart Search</span>
+          <span class="hero-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg> 12 Analysis Tabs</span>
+          <span class="hero-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg> Clinical Reports</span>
+          <span class="hero-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg> 8 Data Sources</span>
+        </div>
+      </div>
+      <div class="hero-preview">
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <div class="browser-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="browser-address">genexplor.app</div>
+          </div>
+          <div class="browser-content">
+            <img src="screenshots/dashboard-overview.png" alt="GeneXplor Dashboard" class="hero-screenshot active" id="heroImg">
+          </div>
+        </div>
+        <div class="hero-screenshot-nav">
+          <button class="screenshot-dot active" data-img="screenshots/dashboard-overview.png" data-label="Gene Dashboard"></button>
+          <button class="screenshot-dot" data-img="screenshots/variants-tab.png" data-label="Variant Explorer"></button>
+          <button class="screenshot-dot" data-img="screenshots/protein-3d.png" data-label="3D Protein Structure"></button>
+          <button class="screenshot-dot" data-img="screenshots/population-map.png" data-label="Population Map"></button>
+          <button class="screenshot-dot" data-img="screenshots/interactions.png" data-label="Interaction Network"></button>
+        </div>
+        <p class="hero-screenshot-label" id="heroLabel">Gene Dashboard</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ STATS STRIP ═══════ -->
+  <section class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat-item"><span class="stat-number" data-target="8">0</span><span class="stat-label">DATA SOURCES</span></div>
+      <div class="stat-item"><span class="stat-number" data-target="12">0</span><span class="stat-label">ANALYSIS VIEWS</span></div>
+      <div class="stat-item"><span class="stat-number" data-target="20">0</span><span class="stat-label">BACKEND SERVICES</span></div>
+      <div class="stat-item"><span class="stat-number" data-target="11">0</span><span class="stat-label">API ENDPOINTS</span></div>
+      <div class="stat-item"><span class="stat-number" data-target="3">0</span><span class="stat-label">EXPORT FORMATS</span></div>
+    </div>
+  </section>
+
+  <!-- ═══════ FEATURES ═══════ -->
+  <section id="features" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-badge"><span class="badge-icon">✦</span> CORE FEATURES</span>
+        <h2 class="section-title">Everything You Need for <span class="gradient-text">Gene Research</span></h2>
+        <p class="section-subtitle">A complete platform for exploring human genes — from variant analysis and 3D protein structures to population genetics, clinical reports, and AI-powered summaries.</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon" style="--icon-color: #56B4D3">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          </div>
+          <h3>Smart Gene Search</h3>
+          <p>Real-time autocomplete with categorized results — search by gene symbol, alias, disease, variant, or chromosomal location. Cmd/Ctrl+K keyboard shortcut.</p>
+          <ul class="feature-bullets">
+            <li>Multi-strategy query parsing</li>
+            <li>Spelling suggestions & corrections</li>
+            <li>Search history with localStorage</li>
+          </ul>
+        </div>
+
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon" style="--icon-color: #E07A3A">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3>Gene Dashboard</h3>
+          <p>Comprehensive 12-tab dashboard aggregating data from 8 genomic databases. Each section provides deep analysis with interactive visualizations.</p>
+          <ul class="feature-bullets">
+            <li>Overview with summary statistics</li>
+            <li>Sidebar navigation with tab routing</li>
+            <li>Per-source data load tracking</li>
+          </ul>
+        </div>
+
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon" style="--icon-color: #D64045">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3>Variant Explorer</h3>
+          <p>Filterable, sortable, paginated variant table powered by TanStack Table. Clinical significance, consequence types, allele frequency, and linked conditions.</p>
+          <ul class="feature-bullets">
+            <li>Detail modal with 3-tab view</li>
+            <li>Interactive analytics charts</li>
+            <li>ClinVar classification data</li>
+          </ul>
+        </div>
+
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon" style="--icon-color: #7C6EE7">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          </div>
+          <h3>3D Protein Structure</h3>
+          <p>Interactive AlphaFold 3D protein viewer (PDBe Molstar) with confidence coloring and variant mapping. Toggle between cartoon, surface, and ball-and-stick.</p>
+          <ul class="feature-bullets">
+            <li>Variant residue highlighting</li>
+            <li>Protein domain lollipop chart</li>
+            <li>UniProt functional annotations</li>
+          </ul>
+        </div>
+
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon" style="--icon-color: #2B9F78">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <h3>Population Genetics</h3>
+          <p>Interactive world map showing allele frequency distribution across 9 global populations from the gnomAD database. Compare variants across ethnicities.</p>
+          <ul class="feature-bullets">
+            <li>React Simple Maps visualization</li>
+            <li>Per-variant population breakdown</li>
+            <li>Hover tooltips with detailed data</li>
+          </ul>
+        </div>
+
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon" style="--icon-color: #D4A843">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          </div>
+          <h3>Reconciliation Engine</h3>
+          <p>Cross-references ClinVar classifications against gnomAD population data to detect conflicts — flagging pathogenic variants that are common in populations.</p>
+          <ul class="feature-bullets">
+            <li>Concordance score calculation</li>
+            <li>Severity-ranked conflict list</li>
+            <li>Automated recommendations</li>
+          </ul>
+        </div>
+
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon" style="--icon-color: #5294C4">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+          </div>
+          <h3>Clinical Reports</h3>
+          <p>ACMG-formatted clinical gene reports with configurable sections. Export as PDF, Markdown, or JSON. Filter variants by significance level.</p>
+          <ul class="feature-bullets">
+            <li>ReportLab PDF generation</li>
+            <li>Section-level customization</li>
+            <li>Clinical metrics summary</li>
+          </ul>
+        </div>
+
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon" style="--icon-color: #E07A3A">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Variant Impact Simulator</h3>
+          <p>Animated visualization showing mutation cascade: DNA → RNA → Protein → Structure → Function → Clinical outcome. Step-by-step central dogma walkthrough.</p>
+          <ul class="feature-bullets">
+            <li>Playback controls & speed adjustment</li>
+            <li>Stage-by-stage animation</li>
+            <li>Select any pathogenic variant</li>
+          </ul>
+        </div>
+
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon" style="--icon-color: #56B4D3">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+          </div>
+          <h3>Research & Trending</h3>
+          <p>Research Pulse tracks publication trends per gene. Trending page ranks genes by momentum. Gene Story mode converts data into a readable narrative.</p>
+          <ul class="feature-bullets">
+            <li>PubMed publication sparklines</li>
+            <li>Gene comparison (side-by-side)</li>
+            <li>Watchlist with notes & tags</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ SCREENSHOTS ═══════ -->
+  <section id="screenshots" class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-badge"><span class="badge-icon">◆</span> SCREENSHOTS</span>
+        <h2 class="section-title">See <span class="gradient-text">GeneXplor</span> in Action</h2>
+        <p class="section-subtitle">Explore every screen of the platform — from gene search through variant analysis to clinical report generation.</p>
+      </div>
+      <div class="screenshot-gallery" id="screenshotGallery">
+        <!-- Gallery items rendered via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ ARCHITECTURE ═══════ -->
+  <section id="architecture" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-badge"><span class="badge-icon">◇</span> ARCHITECTURE</span>
+        <h2 class="section-title">Production-Ready <span class="gradient-text">System Architecture</span></h2>
+        <p class="section-subtitle">A clean layered architecture with service separation, two-layer caching, concurrent API aggregation, and containerized deployment.</p>
+      </div>
+
+      <!-- Frontend Layer -->
+      <div class="arch-layer" data-reveal>
+        <div class="arch-layer-header">
+          <div class="arch-layer-icon" style="--layer-color: #56B4D3">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div>
+            <h3>Frontend Layer</h3>
+            <code>React 19 + TypeScript + Tailwind CSS 4</code>
+          </div>
+        </div>
+        <p class="arch-layer-desc">Modern SPA with component-based architecture, client-side caching via TanStack Query, and responsive design across all device sizes.</p>
+        <div class="arch-sub-grid">
+          <div class="arch-sub-card"><span class="arch-dot" style="--dot-color: #56B4D3"></span><strong>Gene Dashboard</strong><p>12 analysis tabs with sidebar navigation and URL-based routing</p></div>
+          <div class="arch-sub-card"><span class="arch-dot" style="--dot-color: #56B4D3"></span><strong>Smart Search</strong><p>Autocomplete, query parsing, categorized results, keyboard shortcuts</p></div>
+          <div class="arch-sub-card"><span class="arch-dot" style="--dot-color: #56B4D3"></span><strong>Visualizations</strong><p>D3 force graph, Recharts, PDBe Molstar 3D, SVG lollipop charts</p></div>
+          <div class="arch-sub-card"><span class="arch-dot" style="--dot-color: #56B4D3"></span><strong>Standalone Pages</strong><p>Compare, Trending, Watchlist, Gene Story, Search Results</p></div>
+          <div class="arch-sub-card"><span class="arch-dot" style="--dot-color: #56B4D3"></span><strong>Export System</strong><p>PDF/Markdown/JSON/CSV export with clinical report generator</p></div>
+          <div class="arch-sub-card"><span class="arch-dot" style="--dot-color: #56B4D3"></span><strong>UI Primitives</strong><p>GlassCard, GlowBadge, CountUp, Toast, SkeletonLoader, ScrollReveal</p></div>
+        </div>
+      </div>
+
+      <!-- Backend Layer -->
+      <div class="arch-layer" data-reveal>
+        <div class="arch-layer-header">
+          <div class="arch-layer-icon" style="--layer-color: #E07A3A">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1" fill="currentColor"/><circle cx="6" cy="18" r="1" fill="currentColor"/></svg>
+          </div>
+          <div>
+            <h3>Backend Layer</h3>
+            <code>FastAPI + SQLAlchemy 2.0 + Pydantic v2</code>
+          </div>
+        </div>
+        <p class="arch-layer-desc">High-performance async Python API with 20 service modules, concurrent data aggregation, and resilient HTTP clients with retry logic.</p>
+        <div class="arch-sub-grid">
+          <div class="arch-sub-card"><span class="arch-dot" style="--dot-color: #E07A3A"></span><strong>Gene Aggregator</strong><p>Orchestrates parallel API calls to 7+ services, handles partial failures</p></div>
+          <div class="arch-sub-card"><span class="arch-dot" style="--dot-color: #E07A3A"></span><strong>Search Engine</strong><p>Gene/alias/disease indexes with query parsing and fuzzy matching</p></div>
+          <div class="arch-sub-card"><span class="arch-dot" style="--dot-color: #E07A3A"></span><strong>Reconciliation</strong><p>Cross-database conflict detection between ClinVar and gnomAD</p></div>
+          <div class="arch-sub-card"><span class="arch-dot" style="--dot-color: #E07A3A"></span><strong>Report Generator</strong><p>ACMG clinical reports with PDF (ReportLab), Markdown, JSON output</p></div>
+          <div class="arch-sub-card"><span class="arch-dot" style="--dot-color: #E07A3A"></span><strong>AI Summary</strong><p>LLM-powered gene summaries with template fallback</p></div>
+          <div class="arch-sub-card"><span class="arch-dot" style="--dot-color: #E07A3A"></span><strong>Research Pulse</strong><p>Publication trend analysis and trending gene rankings</p></div>
+        </div>
+      </div>
+
+      <!-- Data Layer -->
+      <div class="arch-layer" data-reveal>
+        <div class="arch-layer-header">
+          <div class="arch-layer-icon" style="--layer-color: #2B9F78">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <div>
+            <h3>Data & Caching Layer</h3>
+            <code>Redis + PostgreSQL + 8 External APIs</code>
+          </div>
+        </div>
+        <p class="arch-layer-desc">Two-layer caching strategy — Redis for 24-hour fast lookups, PostgreSQL for persistent fallback. All external API calls are cached and resilient.</p>
+        <div class="arch-sub-grid">
+          <div class="arch-sub-card"><span class="arch-dot" style="--dot-color: #2B9F78"></span><strong>Redis Cache</strong><p>24-hour TTL cache for all aggregated dashboard responses</p></div>
+          <div class="arch-sub-card"><span class="arch-dot" style="--dot-color: #2B9F78"></span><strong>PostgreSQL</strong><p>Persistent JSON blob cache (survives Redis restarts)</p></div>
+          <div class="arch-sub-card"><span class="arch-dot" style="--dot-color: #2B9F78"></span><strong>Docker Compose</strong><p>4 services with health checks (postgres, redis, backend, frontend)</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ TECH STACK ═══════ -->
+  <section id="tech-stack" class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-badge"><span class="badge-icon">●</span> TECH STACK</span>
+        <h2 class="section-title">Built with <span class="gradient-text">Modern Technologies</span></h2>
+        <p class="section-subtitle">Enterprise-grade technologies powering every layer — from type-safe React to async Python services and containerized infrastructure.</p>
+      </div>
+
+      <div class="tech-category" data-reveal>
+        <div class="tech-category-header">
+          <span class="tech-dot" style="--dot-color: #56B4D3"></span>
+          <h3>FRONTEND</h3>
+          <span class="tech-tagline">Modern, responsive single-page application</span>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-card"><span class="tech-emoji">⚛️</span><strong>React 19</strong><p>Component-based UI with hooks</p></div>
+          <div class="tech-card"><span class="tech-emoji">📘</span><strong>TypeScript</strong><p>Full type safety across codebase</p></div>
+          <div class="tech-card"><span class="tech-emoji">🎨</span><strong>Tailwind CSS 4</strong><p>Utility-first CSS with custom tokens</p></div>
+          <div class="tech-card"><span class="tech-emoji">📊</span><strong>Recharts</strong><p>Composable charting for analytics</p></div>
+          <div class="tech-card"><span class="tech-emoji">✨</span><strong>Framer Motion</strong><p>Production-ready animations</p></div>
+          <div class="tech-card"><span class="tech-emoji">🔗</span><strong>React Router v7</strong><p>Client-side tab routing</p></div>
+          <div class="tech-card"><span class="tech-emoji">📦</span><strong>TanStack Query</strong><p>Data fetching + client cache</p></div>
+          <div class="tech-card"><span class="tech-emoji">📋</span><strong>TanStack Table</strong><p>Headless table with sort/filter</p></div>
+          <div class="tech-card"><span class="tech-emoji">🧬</span><strong>PDBe Molstar</strong><p>3D protein structure viewer</p></div>
+        </div>
+      </div>
+
+      <div class="tech-category" data-reveal>
+        <div class="tech-category-header">
+          <span class="tech-dot" style="--dot-color: #E07A3A"></span>
+          <h3>BACKEND</h3>
+          <span class="tech-tagline">High-performance async Python API</span>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-card"><span class="tech-emoji">🐍</span><strong>Python 3.11+</strong><p>Async I/O throughout</p></div>
+          <div class="tech-card"><span class="tech-emoji">⚡</span><strong>FastAPI</strong><p>Modern async web framework</p></div>
+          <div class="tech-card"><span class="tech-emoji">🗃️</span><strong>SQLAlchemy 2.0</strong><p>Async ORM with mapped_column</p></div>
+          <div class="tech-card"><span class="tech-emoji">✅</span><strong>Pydantic v2</strong><p>Data validation & serialization</p></div>
+          <div class="tech-card"><span class="tech-emoji">🌐</span><strong>httpx + tenacity</strong><p>Resilient HTTP clients with retry</p></div>
+          <div class="tech-card"><span class="tech-emoji">📄</span><strong>ReportLab</strong><p>PDF clinical report generation</p></div>
+        </div>
+      </div>
+
+      <div class="tech-category" data-reveal>
+        <div class="tech-category-header">
+          <span class="tech-dot" style="--dot-color: #2B9F78"></span>
+          <h3>INFRASTRUCTURE</h3>
+          <span class="tech-tagline">Containerized deployment with health monitoring</span>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-card"><span class="tech-emoji">🐳</span><strong>Docker Compose</strong><p>4-service orchestration</p></div>
+          <div class="tech-card"><span class="tech-emoji">🔴</span><strong>Redis 7</strong><p>24-hour cache layer (hiredis)</p></div>
+          <div class="tech-card"><span class="tech-emoji">🐘</span><strong>PostgreSQL 16</strong><p>Persistent fallback cache</p></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════ DATA SOURCES ═══════ -->
+  <section id="data-sources" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-badge"><span class="badge-icon">◈</span> DATA SOURCES</span>
+        <h2 class="section-title"><span class="gradient-text">8 Genomic Databases</span> in One Dashboard</h2>
+        <p class="section-subtitle">GeneXplor aggregates data from the world's most trusted genomic databases into a single, unified interface.</p>
+      </div>
+      <div class="datasource-grid">
+        <div class="datasource-card" data-reveal>
+          <div class="ds-header"><div class="ds-icon" style="--ds-color: #56B4D3">E</div><h3>Ensembl</h3></div>
+          <p>Gene coordinates, transcripts, biotype classification, chromosomal location, strand information</p>
+          <code class="ds-url">rest.ensembl.org</code>
+        </div>
+        <div class="datasource-card" data-reveal>
+          <div class="ds-header"><div class="ds-icon" style="--ds-color: #E07A3A">U</div><h3>UniProt</h3></div>
+          <p>Protein info, functional domains, description, protein length, gene name aliases</p>
+          <code class="ds-url">rest.uniprot.org</code>
+        </div>
+        <div class="datasource-card" data-reveal>
+          <div class="ds-header"><div class="ds-icon" style="--ds-color: #D64045">C</div><h3>ClinVar</h3></div>
+          <p>Clinical variants, significance classifications, disease associations, submission timeline</p>
+          <code class="ds-url">eutils.ncbi.nlm.nih.gov</code>
+        </div>
+        <div class="datasource-card" data-reveal>
+          <div class="ds-header"><div class="ds-icon" style="--ds-color: #2B9F78">g</div><h3>gnomAD</h3></div>
+          <p>Population allele frequencies, variant consequences, HGVS notation, allele counts</p>
+          <code class="ds-url">gnomad.broadinstitute.org</code>
+        </div>
+        <div class="datasource-card" data-reveal>
+          <div class="ds-header"><div class="ds-icon" style="--ds-color: #7C6EE7">P</div><h3>PubMed</h3></div>
+          <p>Research publications, abstracts, author lists, journal citations, publication trends</p>
+          <code class="ds-url">eutils.ncbi.nlm.nih.gov</code>
+        </div>
+        <div class="datasource-card" data-reveal>
+          <div class="ds-header"><div class="ds-icon" style="--ds-color: #5294C4">A</div><h3>AlphaFold</h3></div>
+          <p>Predicted 3D protein structures, confidence scores (pLDDT), model versions, structure URLs</p>
+          <code class="ds-url">alphafold.ebi.ac.uk</code>
+        </div>
+        <div class="datasource-card" data-reveal>
+          <div class="ds-header"><div class="ds-icon" style="--ds-color: #D4A843">S</div><h3>STRING</h3></div>
+          <p>Protein-protein interactions, combined scores, experimental/textmining evidence, enrichment terms</p>
+          <code class="ds-url">string-db.org</code>
+        </div>
+        <div class="datasource-card" data-reveal>
+          <div class="ds-header"><div class="ds-icon" style="--ds-color: #56B4D3">R</div><h3>Reactome</h3></div>
+          <p>Biological pathways, pathway hierarchy, gene counts, categories, sub-events</p>
+          <code class="ds-url">reactome.org</code>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ GET STARTED ═══════ -->
+  <section id="get-started" class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-badge"><span class="badge-icon">▸</span> GET STARTED</span>
+        <h2 class="section-title">Up and Running in <span class="gradient-text">Minutes</span></h2>
+        <p class="section-subtitle">GeneXplor uses Docker Compose for a one-command setup. All 4 services start with health checks — no manual configuration needed.</p>
+      </div>
+      <div class="setup-container" data-reveal>
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-dots"><span></span><span></span><span></span></span>
+            <span class="code-title">Terminal</span>
+          </div>
+          <pre class="code-content"><code><span class="code-comment"># Clone the repository</span>
+<span class="code-cmd">git clone</span> https://github.com/contact-ajmal/geneXplor.git
+<span class="code-cmd">cd</span> GeneXplor
+
+<span class="code-comment"># Copy environment file</span>
+<span class="code-cmd">cp</span> .env.example .env
+
+<span class="code-comment"># Start all services (PostgreSQL, Redis, Backend, Frontend)</span>
+<span class="code-cmd">docker-compose up</span>
+
+<span class="code-comment"># App available at:</span>
+<span class="code-comment"># Frontend → http://localhost:3000</span>
+<span class="code-comment"># Backend  → http://localhost:8000</span>
+<span class="code-comment"># API Docs → http://localhost:8000/docs</span></code></pre>
+        </div>
+        <div class="setup-info">
+          <h3>What Gets Started</h3>
+          <div class="setup-services">
+            <div class="service-pill"><span class="service-dot" style="--s-color: #2B9F78"></span>PostgreSQL 16</div>
+            <div class="service-pill"><span class="service-dot" style="--s-color: #D64045"></span>Redis 7</div>
+            <div class="service-pill"><span class="service-dot" style="--s-color: #E07A3A"></span>FastAPI Backend</div>
+            <div class="service-pill"><span class="service-dot" style="--s-color: #56B4D3"></span>React Frontend</div>
+          </div>
+          <p>All services include health checks. Tables auto-create on first startup. Gene/alias/disease search indexes load in background.</p>
+          <h3>Quick API Test</h3>
+          <div class="code-inline"><code>curl http://localhost:8000/gene/TP53</code></div>
+          <p>Returns aggregated data from all 8 sources: gene info, protein data, clinical variants, allele frequencies, publications, pathways, structure, and interactions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">
+          <svg class="logo-icon" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="url(#logoGrad2)" stroke-width="2.5"/><path d="M10 20c2-6 4-12 6-12s4 6 6 12" stroke="url(#logoGrad2)" stroke-width="2" stroke-linecap="round"/><path d="M10 16h12" stroke="url(#logoGrad2)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/><defs><linearGradient id="logoGrad2" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#56B4D3"/><stop offset="1" stop-color="#7C6EE7"/></linearGradient></defs></svg>
+          <span>GeneXplor</span>
+        </a>
+        <p class="footer-desc">An open-source gene knowledge platform aggregating data from 8 genomic databases into interactive, research-ready dashboards.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="#features">Features</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#tech-stack">Tech Stack</a>
+      </div>
+      <div class="footer-col">
+        <h4>Data Sources</h4>
+        <a href="https://rest.ensembl.org" target="_blank">Ensembl</a>
+        <a href="https://rest.uniprot.org" target="_blank">UniProt</a>
+        <a href="https://www.ncbi.nlm.nih.gov/clinvar/" target="_blank">ClinVar</a>
+        <a href="https://gnomad.broadinstitute.org" target="_blank">gnomAD</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="https://github.com/contact-ajmal/geneXplor" target="_blank">GitHub Repository</a>
+        <a href="#get-started">Getting Started</a>
+        <a href="https://github.com/contact-ajmal/geneXplor/issues" target="_blank">Report Issue</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 GeneXplor. Open source under the MIT License.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
