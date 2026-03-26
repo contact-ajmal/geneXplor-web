@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeneXplor — System Architecture</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg fill="none" class="logo-icon" viewBox="0 0 32 32">
+          <circle cx="16" cy="16" r="14" stroke="#D97757" stroke-width="2.5"/>
+          <path d="M10 20c2-6 4-12 6-12s4 6 6 12" stroke="#D97757" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        GeneXplor
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="demo.html" class="nav-link">Demo</a>
+        <a href="architecture.html" class="nav-link active">Architecture</a>
+        <a href="tech-stack.html" class="nav-link">Tech Stack</a>
+        <a href="data-sources.html" class="nav-link">Data Sources</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <h1 class="page-title">Service Architecture</h1>
+      <p class="page-subtitle">A decoupled, asynchronous, scalable architecture bringing multiple bioinformatic services into a single UI.</p>
+    </div>
+
+    <section class="section">
+      <div class="section-inner">
+        <!-- Frontend -->
+        <div class="arch-layer">
+          <div class="arch-layer-header">
+            <h3>Frontend Layer</h3>
+            <p>React 19 + TypeScript ecosystem</p>
+          </div>
+          <div class="arch-sub-grid">
+            <div class="arch-sub-card">
+              <strong>Gene Dashboard</strong>
+              <p>12 analysis tabs with sidebar navigation and URL-based routing</p>
+            </div>
+            <div class="arch-sub-card">
+              <strong>Smart Search</strong>
+              <p>Autocomplete, query parsing, categorized results, keyboard shortcuts</p>
+            </div>
+            <div class="arch-sub-card">
+              <strong>Visualizations</strong>
+              <p>D3 force graph, Recharts, PDBe Molstar 3D, SVG lollipop charts</p>
+            </div>
+            <div class="arch-sub-card">
+              <strong>Standalone Pages</strong>
+              <p>Compare, Trending, Watchlist, Gene Story, Search Results</p>
+            </div>
+            <div class="arch-sub-card">
+              <strong>Export System</strong>
+              <p>PDF/Markdown/JSON/CSV export with clinical report generator</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="arch-layer">
+          <div class="arch-layer-header">
+            <h3>Backend Layer</h3>
+            <p>FastAPI + SQLAlchemy 2.0 + Pydantic v2. High-performance async Python API with 20 service modules, concurrent data aggregation, and resilient HTTP clients.</p>
+          </div>
+          <div class="arch-sub-grid">
+            <div class="arch-sub-card">
+              <strong>Gene Aggregator</strong>
+              <p>Orchestrates parallel API calls to 7+ services, handles partial failures</p>
+            </div>
+            <div class="arch-sub-card">
+              <strong>Search Engine</strong>
+              <p>Gene/alias/disease indexes with query parsing and fuzzy matching</p>
+            </div>
+            <div class="arch-sub-card">
+              <strong>Reconciliation</strong>
+              <p>Cross-database conflict detection between ClinVar and gnomAD</p>
+            </div>
+            <div class="arch-sub-card">
+              <strong>Report Generator</strong>
+              <p>Builds structured reports and templates JSON output schemas</p>
+            </div>
+            <div class="arch-sub-card">
+              <strong>Background Tasks</strong>
+              <p>Async processing for trend analytics, cache warming, and metadata indexing</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data -->
+        <div class="arch-layer">
+          <div class="arch-layer-header">
+            <h3>Data Storage & Integration</h3>
+            <p>Persistent storage, intermediate caching, and external REST integrations</p>
+          </div>
+          <div class="arch-sub-grid">
+            <div class="arch-sub-card">
+              <strong>PostgreSQL DB</strong>
+              <p>Stores user settings, saved watchlists, custom layouts, and logs</p>
+            </div>
+            <div class="arch-sub-card">
+              <strong>Redis Cache</strong>
+              <p>1-hour TTL query caching to prevent remote API rate limiting</p>
+            </div>
+            <div class="arch-sub-card">
+              <strong>External APIs</strong>
+              <p>REST integrations to NCBI E-utilities, Ensembl REST API, EBI API</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 GeneXplor Project. Open source under MIT License.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
